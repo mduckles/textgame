@@ -9,10 +9,10 @@ classes = config['classes']
 first_monsters = config['first_monsters']
 locations = config['locations']
 
-
-def say(message,output=False):
+def say(message,speak=True,output=False):
     ''' Say a message through the Mac `say` command '''
-    system('say "%s"' % message)
+    if speak:
+        system('say "%s"' % message)
     if output:
         print message
 
@@ -21,9 +21,10 @@ def pickrand(inlist):
     return inlist[randint(0,len(inlist)-1)]
 
 def character(listof, mode='race'):
+    ''' Interface to select character traits '''
     msg = "Which %s would you like to be" % mode
     print msg
-    say(msg)
+    say(msg,print=True)
     for kind in listof:
         say(kind)
         print kind
@@ -32,12 +33,11 @@ def character(listof, mode='race'):
     return selection
 
 def setupchar():
+    ''' Create a character object '''
     race = character(races)
     charclass = character(classes,mode='class')
     say('You will be a %s %s' %(race,charclass))
     return {'race': race, 'charclass': charclass}
-
-character = {'race': 'Eladrin', 'charclass': 'Wizard'}
 
 def pickweapon():
     say("Which weapon would you like to place in your hand?")
@@ -64,15 +64,15 @@ def weapon(weap):
     print "Your first roll was %s" % res
 
 def roll(d):
+    ''' Roll a d-sided die'''
     return randint(1,d)
 
 def attack(scene):
+    ''' Attach a monster from a scene '''
     say("You are in a %s with a %s, you are holding a %s" % (
     scene['loc'], scene['monst'], scene['weap']
     ), output = True)
     weapon(scene['weap'])
-
-
 
 #print setupchar()
 scene()
