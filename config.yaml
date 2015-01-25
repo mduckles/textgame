@@ -1,0 +1,48 @@
+races:
+    - Dragonborn
+    - Dwarf
+    - Eladrin
+    - Elf
+    - Half Elf
+    - Halfling
+    - Human
+    - Tiefling
+
+classes:
+    - Cleric
+    - Wizard
+    - Fighter
+    - Ranger
+    - Rogue
+    - Warloc
+    - Warlord
+    - Paladin
+
+locations:
+    - dungeon
+    - village
+    - castle
+    - forest
+    - lake
+    - desert
+    - mountain
+    - plains
+    - woodland
+
+first_monsters:
+    - hipogrith
+    - troll
+    - orc
+    - goblins
+
+weapons:
+    - spear
+    - dagger
+    - javelin
+    - club
+    - long bow
+    - short bow
+    - short sword
+    - long sword
+
+
