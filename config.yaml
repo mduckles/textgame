@@ -36,13 +36,43 @@ first_monsters:
     - goblins
 
 weapons:
-    - spear
-    - dagger
-    - javelin
-    - club
-    - long bow
-    - short bow
-    - short sword
-    - long sword
-
-
+    spear:
+        range: 0
+        prof: 2
+        die: 8
+        gold: 5
+    dagger:
+        range: (5,10)
+        die: 4
+        prof: 3
+        gold: 1
+    javelin:
+        range: (10,20)
+        die: 6
+        prof: 2
+        gold: 5
+    club:
+        range: 0
+        die: 6
+        prof: 2
+        gold: 1
+    long bow:
+        range: (20,40)
+        die: 10
+        prof: 2
+        gold: 30
+    short bow:
+        range: (15,30)
+        die: 8
+        prof: 2
+        gold: 25
+    short sword:
+        range: 0
+        die: 6
+        prof: 3
+        gold: 10
+    long sword:
+        range: 0
+        die: 8
+        prof: 3
+        gold: 15

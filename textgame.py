@@ -73,6 +73,6 @@ def attack(scene):
     weapon(scene['weap'])
 
 
+
 #print setupchar()
-#scene()
-weapon('javelin')
+scene()
