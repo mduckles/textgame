@@ -21,16 +21,16 @@ def pickrand(inlist):
     ''' Picks a random item from a list'''
     return inlist[randint(0,len(inlist)-1)]
 
-def character(setof, mode='race'):
+def character(listof, mode='race'):
     ''' Interface to select character traits '''
     msg = "Which %s would you like to be" % mode
     print msg
     say(msg,output=True)
-    for kind in setof:
+    for kind in listof:
         say(kind)
         print kind
     selection = raw_input('? ')
-    while selection not in setof:
+    while selection not in listof:
         print "Can't find that %s, try again" % mode
         selection = raw_input('? ')
     say("You have selected %s" % selection)
