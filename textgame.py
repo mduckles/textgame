@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from os import system
 from random import randint
 import yaml
@@ -20,15 +21,18 @@ def pickrand(inlist):
     ''' Picks a random item from a list'''
     return inlist[randint(0,len(inlist)-1)]
 
-def character(listof, mode='race'):
+def character(setof, mode='race'):
     ''' Interface to select character traits '''
     msg = "Which %s would you like to be" % mode
     print msg
-    say(msg,print=True)
-    for kind in listof:
+    say(msg,output=True)
+    for kind in setof:
         say(kind)
         print kind
-    selection = raw_input('?')
+    selection = raw_input('? ')
+    while selection not in setof:
+        print "Can't find that %s, try again" % mode
+        selection = raw_input('? ')
     say("You have selected %s" % selection)
     return selection
 
@@ -65,6 +69,11 @@ def weapon(weap):
 
 def roll(d):
     ''' Roll a d-sided die'''
+    d6 = (
+        "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"
+    )
+    if d == 6:
+        return d6[randint(1,d)-1]
     return randint(1,d)
 
 def attack(scene):
