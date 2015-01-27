@@ -47,7 +47,10 @@ def pickweapon():
     say("Which weapon would you like to place in your hand?")
     for weapon in weapons:
         print weapon
-    weapon = raw_input('?')
+    weapon = raw_input('? ')
+    while weapon not in weapons:
+        print "I don't know about that weapon, try again"
+        weapon = raw_input('? ')
     return weapon
 
 def scene():
